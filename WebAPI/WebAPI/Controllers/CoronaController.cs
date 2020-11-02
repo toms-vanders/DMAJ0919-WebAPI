@@ -31,8 +31,14 @@ namespace WebAPI.Controllers
         }
 
         // POST: api/Corona
-        public void Post([FromBody]string value)
+        public string Post(Datum datum)
         {
+            
+            CoronaOperations coop = new CoronaOperations();
+
+            //Calling inser method and getting response
+            var response = coop.InsertRecord(datum);
+            return response;
         }
 
         // PUT: api/Corona/5
